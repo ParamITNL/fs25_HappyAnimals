@@ -1,7 +1,7 @@
 # FS25 HappyAnimals
 
 > [!WARNING]
-> This mod is developed for my own use. It is still in a developmental stage and should be considered completely untested for normal gameplay. It may contain errors, affect savegames, or behave differently than expected. Use it at your own risk and keep savegame backups.
+> This mod is developed for my own use. It is still in a developmental stage and should be considered completely untested for normal gameplay. It may contain errors, affect savegames, or behave differently than expected. Use it at your own risk and keep savegame backups. It is ported from the [FS22 AnimalHelper](https://github.com/ParamITNL/fs22-AnimalHelperMod) using AI.
 
 HappyAnimals automatically tends to animal husbandries owned by the current farm. It is the Farming Simulator 25 successor to [FS22 AnimalHelper](https://github.com/ParamITNL/fs22-AnimalHelperMod).
 
