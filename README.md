@@ -78,9 +78,9 @@ Potential future improvements carried over from the FS22 project include:
 
 These items are ideas, not commitments or a release schedule.
 
-## Version history
+## Changelog
 
-- **1.0.0.0** — Initial Farming Simulator 25 conversion.
+See [changelog.md](changelog.md) for the complete version history.
 
 ## License
 
