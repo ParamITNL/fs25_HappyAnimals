@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<l10n>
+    <translationContributors>ParamIT</translationContributors>
+    <texts>
+        <text name="input_HAPPY_ANIMALS_TOGGLE" text="Enable or disable animal helpers"/>
+        <text name="input_HAPPY_ANIMALS_SETTINGS" text="HappyAnimals settings"/>
+        <text name="HAPPY_ANIMALS_ENABLED" text="Animal helpers enabled"/>
+        <text name="HAPPY_ANIMALS_DISABLED" text="Animal helpers disabled"/>
+        <text name="HAPPY_ANIMALS_STARTED" text="The animal helpers are starting their work"/>
+        <text name="HAPPY_ANIMALS_DONE" text="The animal helpers are done. Your animals have been cared for"/>
+        <text name="HAPPY_ANIMALS_SETTINGS_TITLE" text="HappyAnimals"/>
+        <text name="HAPPY_ANIMALS_SETTINGS_SECTION" text="Helper settings"/>
+        <text name="HAPPY_ANIMALS_START_HOUR" text="Start time"/>
+        <text name="HAPPY_ANIMALS_START_HOUR_TOOLTIP" text="The helpers work at this time. They do not work while you are sleeping"/>
+        <text name="HAPPY_ANIMALS_FILL_STRAW" text="Supply straw"/>
+        <text name="HAPPY_ANIMALS_FILL_STRAW_TOOLTIP" text="Determines whether the helpers supply straw to husbandries"/>
+        <text name="HAPPY_ANIMALS_DEBUG" text="Debug mode"/>
+        <text name="HAPPY_ANIMALS_DEBUG_TOOLTIP" text="Writes additional log messages and runs the helpers every hour"/>
+    </texts>
+</l10n>

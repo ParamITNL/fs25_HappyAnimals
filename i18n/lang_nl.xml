@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<l10n>
+    <translationContributors>ParamIT</translationContributors>
+    <texts>
+        <text name="input_HAPPY_ANIMALS_TOGGLE" text="Dierenverzorgers in- of uitschakelen"/>
+        <text name="input_HAPPY_ANIMALS_SETTINGS" text="HappyAnimals-instellingen"/>
+        <text name="HAPPY_ANIMALS_ENABLED" text="Dierenverzorgers ingeschakeld"/>
+        <text name="HAPPY_ANIMALS_DISABLED" text="Dierenverzorgers uitgeschakeld"/>
+        <text name="HAPPY_ANIMALS_STARTED" text="De dierenverzorgers beginnen met hun werk"/>
+        <text name="HAPPY_ANIMALS_DONE" text="De dierenverzorgers zijn klaar. Je dieren zijn verzorgd"/>
+        <text name="HAPPY_ANIMALS_SETTINGS_TITLE" text="HappyAnimals"/>
+        <text name="HAPPY_ANIMALS_SETTINGS_SECTION" text="Instellingen verzorgers"/>
+        <text name="HAPPY_ANIMALS_START_HOUR" text="Starttijd"/>
+        <text name="HAPPY_ANIMALS_START_HOUR_TOOLTIP" text="De verzorgers werken op dit tijdstip. Ze werken niet terwijl je slaapt"/>
+        <text name="HAPPY_ANIMALS_FILL_STRAW" text="Stro bijvullen"/>
+        <text name="HAPPY_ANIMALS_FILL_STRAW_TOOLTIP" text="Bepaalt of de verzorgers stro aan de dierenverblijven leveren"/>
+        <text name="HAPPY_ANIMALS_DEBUG" text="Ontwikkelaarsmodus"/>
+        <text name="HAPPY_ANIMALS_DEBUG_TOOLTIP" text="Schrijft extra logberichten en laat de verzorgers elk uur werken"/>
+    </texts>
+</l10n>

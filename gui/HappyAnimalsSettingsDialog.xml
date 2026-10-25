@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<GUI name="HappyAnimalsSettingsDialog" onOpen="onOpen">
+    <GuiElement profile="newLayer"/>
+    <Bitmap profile="dialogFullscreenBg"/>
+
+    <GuiElement profile="fs25_dialogBg" id="dialogElement" size="1100px 620px">
+        <ThreePartBitmap profile="fs25_dialogBgMiddleSmall"/>
+        <ThreePartBitmap profile="fs25_dialogBgTopSmall"/>
+        <ThreePartBitmap profile="fs25_dialogBgBottom"/>
+
+        <GuiElement profile="fs25_dialogContentContainer">
+            <GuiElement profile="fs25_shopHeaderPanel" position="30px -35px">
+                <Bitmap profile="fs25_menuHeaderIconBg">
+                    <Bitmap profile="fs25_menuHeaderIcon" imageSliceId="gui.icon_options_generalSettings2"/>
+                </Bitmap>
+                <Text profile="fs25_menuHeaderTitle" text="$l10n_HAPPY_ANIMALS_SETTINGS_TITLE"/>
+            </GuiElement>
+
+            <GuiElement profile="fs25_menuContainer">
+                <ScrollingLayout profile="fs25_settingsLayout" id="settingsLayout">
+                    <Text profile="fs25_settingsSectionHeader" text="$l10n_HAPPY_ANIMALS_SETTINGS_SECTION"/>
+
+                    <Bitmap profile="fs25_multiTextOptionContainer" imageColor="0.08 0.08 0.08 0.96">
+                        <MultiTextOption profile="fs25_settingsMultiTextOption" id="startHourOption" onCreate="onCreateStartHour">
+                            <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_HAPPY_ANIMALS_START_HOUR_TOOLTIP"/>
+                        </MultiTextOption>
+                        <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_HAPPY_ANIMALS_START_HOUR"/>
+                    </Bitmap>
+
+                    <Bitmap profile="fs25_multiTextOptionContainer" imageColor="0.08 0.08 0.08 0.96">
+                        <BinaryOption profile="fs25_settingsBinaryOption" id="fillStrawOption">
+                            <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_HAPPY_ANIMALS_FILL_STRAW_TOOLTIP"/>
+                        </BinaryOption>
+                        <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_HAPPY_ANIMALS_FILL_STRAW"/>
+                    </Bitmap>
+
+                    <Bitmap profile="fs25_multiTextOptionContainer" imageColor="0.08 0.08 0.08 0.96">
+                        <BinaryOption profile="fs25_settingsBinaryOption" id="debugOption">
+                            <Text profile="fs25_multiTextOptionTooltip" name="ignore" text="$l10n_HAPPY_ANIMALS_DEBUG_TOOLTIP"/>
+                        </BinaryOption>
+                        <Text profile="fs25_settingsMultiTextOptionTitle" text="$l10n_HAPPY_ANIMALS_DEBUG"/>
+                    </Bitmap>
+                </ScrollingLayout>
+                <Bitmap profile="fs25_settingsTooltipSeparator"/>
+            </GuiElement>
+        </GuiElement>
+
+        <BoxLayout profile="fs25_dialogButtonBox" id="buttonsPanel">
+            <Button profile="buttonOK" text="$l10n_button_save" onClick="onClickSave"/>
+            <Bitmap profile="fs25_dialogButtonBoxSeparator"/>
+            <Button profile="buttonBack" text="$l10n_button_back" onClick="onClickBack"/>
+        </BoxLayout>
+    </GuiElement>
+</GUI>

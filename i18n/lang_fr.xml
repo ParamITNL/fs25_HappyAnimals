@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<l10n>
+    <translationContributors>ParamIT, Lactic68</translationContributors>
+    <texts>
+        <text name="input_HAPPY_ANIMALS_TOGGLE" text="Activer ou désactiver les ouvriers pour animaux"/>
+        <text name="input_HAPPY_ANIMALS_SETTINGS" text="Paramètres de HappyAnimals"/>
+        <text name="HAPPY_ANIMALS_ENABLED" text="Ouvriers pour animaux activés"/>
+        <text name="HAPPY_ANIMALS_DISABLED" text="Ouvriers pour animaux désactivés"/>
+        <text name="HAPPY_ANIMALS_STARTED" text="Les ouvriers pour animaux commencent leur travail"/>
+        <text name="HAPPY_ANIMALS_DONE" text="Les ouvriers ont terminé. Vos animaux ont été soignés"/>
+        <text name="HAPPY_ANIMALS_SETTINGS_TITLE" text="HappyAnimals"/>
+        <text name="HAPPY_ANIMALS_SETTINGS_SECTION" text="Paramètres des ouvriers"/>
+        <text name="HAPPY_ANIMALS_START_HOUR" text="Heure de début"/>
+        <text name="HAPPY_ANIMALS_START_HOUR_TOOLTIP" text="Les ouvriers travaillent à cette heure. Ils ne travaillent pas pendant votre sommeil"/>
+        <text name="HAPPY_ANIMALS_FILL_STRAW" text="Fournir de la paille"/>
+        <text name="HAPPY_ANIMALS_FILL_STRAW_TOOLTIP" text="Détermine si les ouvriers fournissent de la paille aux enclos"/>
+        <text name="HAPPY_ANIMALS_DEBUG" text="Mode débogage"/>
+        <text name="HAPPY_ANIMALS_DEBUG_TOOLTIP" text="Ajoute des messages au journal et exécute les ouvriers toutes les heures"/>
+    </texts>
+</l10n>

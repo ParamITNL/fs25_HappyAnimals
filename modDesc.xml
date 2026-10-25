@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<modDesc descVersion="109" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com/xml/fs25/modDesc.xsd">
+    <author>ParamIT</author>
+    <version>1.0.0.0</version>
+    <title>
+        <en>HappyAnimals</en>
+        <nl>HappyAnimals</nl>
+        <fr>HappyAnimals</fr>
+        <es>HappyAnimals</es>
+    </title>
+    <description>
+        <en><![CDATA[
+Hire helpers who tend to your animals every day at a configurable time. They buy food, supply water, optionally provide straw, and train and clean horses. The cost of supplied food and straw is calculated from the in-game economy.
+
+Controls:
+- Left Ctrl + Left Alt + 9: Enable or disable helpers
+- Left Ctrl + Left Alt + 0: Open settings
+        ]]></en>
+        <nl><![CDATA[
+Huur verzorgers in die elke dag op een instelbaar tijdstip voor je dieren zorgen. Ze kopen voer, vullen water bij, leveren optioneel stro en trainen en verzorgen paarden. De kosten van voer en stro worden berekend met de economie van het spel.
+        ]]></nl>
+        <fr><![CDATA[
+Engagez des ouvriers qui s'occupent de vos animaux chaque jour à une heure configurable. Ils achètent la nourriture, fournissent l'eau et éventuellement la paille, puis entraînent et nettoient les chevaux. Le coût de la nourriture et de la paille est calculé selon l'économie du jeu.
+        ]]></fr>
+        <es><![CDATA[
+Contrata ayudantes que cuidan de tus animales todos los días a una hora configurable. Compran comida, suministran agua, añaden paja opcionalmente y entrenan y limpian los caballos. El coste de la comida y la paja se calcula según la economía del juego.
+        ]]></es>
+    </description>
+    <iconFilename>icon_HappyAnimals.png</iconFilename>
+    <multiplayer supported="false"/>
+
+    <l10n filenamePrefix="i18n/lang"/>
+
+    <extraSourceFiles>
+        <sourceFile filename="scripts/gui/HappyAnimalsSettingsDialog.lua"/>
+        <sourceFile filename="scripts/HappyAnimals.lua"/>
+    </extraSourceFiles>
+
+    <actions>
+        <action name="HAPPY_ANIMALS_TOGGLE" axisType="HALF"/>
+        <action name="HAPPY_ANIMALS_SETTINGS" axisType="HALF"/>
+    </actions>
+
+    <inputBinding>
+        <actionBinding action="HAPPY_ANIMALS_TOGGLE">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_lalt KEY_lctrl KEY_9"/>
+            <binding device="GAMEPAD_DEFAULT" input="BUTTON_5 BUTTON_6 BUTTON_1" axisComponent="+" neutralInput="0" index="1"/>
+        </actionBinding>
+        <actionBinding action="HAPPY_ANIMALS_SETTINGS">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_lalt KEY_lctrl KEY_0"/>
+        </actionBinding>
+    </inputBinding>
+</modDesc>

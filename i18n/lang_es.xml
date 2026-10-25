@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<l10n>
+    <translationContributors>ParamIT, Vanquish081</translationContributors>
+    <texts>
+        <text name="input_HAPPY_ANIMALS_TOGGLE" text="Activar o desactivar los ayudantes de animales"/>
+        <text name="input_HAPPY_ANIMALS_SETTINGS" text="Ajustes de HappyAnimals"/>
+        <text name="HAPPY_ANIMALS_ENABLED" text="Ayudantes de animales activados"/>
+        <text name="HAPPY_ANIMALS_DISABLED" text="Ayudantes de animales desactivados"/>
+        <text name="HAPPY_ANIMALS_STARTED" text="Los ayudantes de animales empiezan su trabajo"/>
+        <text name="HAPPY_ANIMALS_DONE" text="Los ayudantes han terminado. Tus animales han sido atendidos"/>
+        <text name="HAPPY_ANIMALS_SETTINGS_TITLE" text="HappyAnimals"/>
+        <text name="HAPPY_ANIMALS_SETTINGS_SECTION" text="Ajustes de los ayudantes"/>
+        <text name="HAPPY_ANIMALS_START_HOUR" text="Hora de inicio"/>
+        <text name="HAPPY_ANIMALS_START_HOUR_TOOLTIP" text="Los ayudantes trabajan a esta hora. No trabajan mientras duermes"/>
+        <text name="HAPPY_ANIMALS_FILL_STRAW" text="Suministrar paja"/>
+        <text name="HAPPY_ANIMALS_FILL_STRAW_TOOLTIP" text="Determina si los ayudantes suministran paja a los establos"/>
+        <text name="HAPPY_ANIMALS_DEBUG" text="Modo de depuración"/>
+        <text name="HAPPY_ANIMALS_DEBUG_TOOLTIP" text="Escribe mensajes adicionales en el registro y ejecuta los ayudantes cada hora"/>
+    </texts>
+</l10n>
