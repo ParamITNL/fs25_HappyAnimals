@@ -2,9 +2,9 @@
 
 All notable changes to HappyAnimals are documented in this file.
 
-## 1.0.0.0 - 2026-10-25
+## 1.0.0.0 - 2026-10-26
 
-Initial Farming Simulator 25 development version.
+Initial Farming Simulator 25 public release.
 
 ### Added
 
@@ -26,7 +26,7 @@ Initial Farming Simulator 25 development version.
 
 ### Known limitations
 
-- This is a personal development build and should be considered untested for normal gameplay.
+- This release has not yet been verified through an in-game smoke test. Keep savegame backups.
 - Multiplayer support is disabled.
 - Feed is purchased directly instead of being taken from farm storage.
 - Fill types are not selected by price.
