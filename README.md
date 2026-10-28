@@ -7,7 +7,7 @@ HappyAnimals automatically tends to animal husbandries owned by the current farm
 
 The helper works once per day at a configurable time (`09:00` by default). It:
 
-- Fills the available food groups using supported fill types.
+- Fills animal feed with the most effective available food, using the lowest current market price as the tie-breaker.
 - Supplies water when the husbandry does not have an automatic water supply.
 - Supplies straw when enabled.
 - Trains and cleans horses.
@@ -16,9 +16,9 @@ The helper works once per day at a configurable time (`09:00` by default). It:
 
 ## Costs
 
-HappyAnimals uses the in-game economy to calculate the cost of supplied food and straw. Horse training and fitness use a fixed price per missing percentage point. Water is supplied without a material charge.
+HappyAnimals first takes suitable feed from storage owned by the current farm, without charging for it. When that stock cannot fill the husbandry, the helper buys the remainder at the current price reported by the in-game economy. Stored and purchased feed are both selected by effectiveness first, then by lowest market price.
 
-Costs are charged to the current farm as animal upkeep.
+Purchased feed and supplied straw are charged to the current farm as animal upkeep. Horse training and fitness use a fixed price per missing percentage point. Water is supplied without a material charge.
 
 ## Installation on Windows
 
@@ -69,14 +69,7 @@ Multiplayer support is disabled. The mod is intended for personal single-player 
 
 This repository contains development code rather than a tested release. There is no guarantee of savegame compatibility, correct pricing, compatibility with every husbandry, or compatibility with other mods.
 
-Potential future improvements carried over from the FS22 project include:
-
-- Taking feed from farm storage before buying it.
-- Selecting fill types based on price.
-- Determining straw use from husbandry capabilities automatically.
-- Additional translations.
-
-These items are ideas, not commitments or a release schedule.
+Potential future improvements carried over from the FS22 project include determining straw use from husbandry capabilities automatically and adding more translations. These items are ideas, not commitments or a release schedule.
 
 ## Changelog
 
