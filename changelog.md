@@ -2,7 +2,21 @@
 
 All notable changes to HappyAnimals are documented in this file.
 
-## 1.0.0.0 - 2026-10-26
+## 1.1.0.1 - 2026-10-28
+
+### Fixed
+
+- Feed stored in farm-owned silos is now detected when FS25 exposes its storage collection with object keys.
+
+## 1.1.0.0 - 2026-10-28
+
+### Changed
+
+- Animal helpers now use suitable feed from storage owned by the current farm before buying any remainder.
+- Stored feed is supplied without charge; purchased feed uses the current price from the in-game economy.
+- Stored and purchased feed are selected by highest effectiveness first, then by lowest current market price.
+
+## 1.0.0.0 - 2026-10-25
 
 Initial Farming Simulator 25 public release.
 

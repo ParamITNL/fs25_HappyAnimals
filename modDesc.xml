@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <modDesc descVersion="109" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com/xml/fs25/modDesc.xsd">
     <author>ParamIT</author>
-    <version>1.0.0.0</version>
+    <version>1.1.0.1</version>
     <title>
         <en>HappyAnimals</en>
         <nl>HappyAnimals</nl>
@@ -10,20 +10,20 @@
     </title>
     <description>
         <en><![CDATA[
-Hire helpers who tend to your animals every day at a configurable time. They buy food, supply water, optionally provide straw, and train and clean horses. The cost of supplied food and straw is calculated from the in-game economy.
+Hire helpers who tend to your animals every day at a configurable time. They first use suitable feed from farm storage and buy only the remainder, supply water, optionally provide straw, and train and clean horses. Feed is selected by effectiveness first, then by the lowest current market price. Stored feed is free; purchased feed and straw are priced through the in-game economy.
 
 Controls:
 - Left Ctrl + Left Alt + 9: Enable or disable helpers
 - Left Ctrl + Left Alt + 0: Open settings
         ]]></en>
         <nl><![CDATA[
-Huur verzorgers in die elke dag op een instelbaar tijdstip voor je dieren zorgen. Ze kopen voer, vullen water bij, leveren optioneel stro en trainen en verzorgen paarden. De kosten van voer en stro worden berekend met de economie van het spel.
+Huur verzorgers in die elke dag op een instelbaar tijdstip voor je dieren zorgen. Ze gebruiken eerst geschikt voer uit de eigen boerderijvoorraad en kopen alleen het ontbrekende voer in, vullen water bij, leveren optioneel stro en trainen en verzorgen paarden. Voer wordt eerst op effectiviteit en daarna op de laagste actuele marktprijs gekozen. Eigen voer is gratis; ingekocht voer en stro worden geprijsd via de economie van het spel.
         ]]></nl>
         <fr><![CDATA[
-Engagez des ouvriers qui s'occupent de vos animaux chaque jour à une heure configurable. Ils achètent la nourriture, fournissent l'eau et éventuellement la paille, puis entraînent et nettoient les chevaux. Le coût de la nourriture et de la paille est calculé selon l'économie du jeu.
+Engagez des ouvriers qui s'occupent de vos animaux chaque jour à une heure configurable. Ils utilisent d'abord les aliments appropriés du stock de la ferme et n'achètent que le complément, fournissent de l'eau et éventuellement de la paille, puis entraînent et nettoient les chevaux. Les aliments sont choisis d'abord selon leur efficacité, puis selon le prix actuel du marché le plus bas. Le stock de la ferme est gratuit ; les aliments achetés et la paille sont tarifés selon l'économie du jeu.
         ]]></fr>
         <es><![CDATA[
-Contrata ayudantes que cuidan de tus animales todos los días a una hora configurable. Compran comida, suministran agua, añaden paja opcionalmente y entrenan y limpian los caballos. El coste de la comida y la paja se calcula según la economía del juego.
+Contrata ayudantes que cuidan de tus animales todos los días a una hora configurable. Primero usan alimento adecuado de las existencias de la granja y compran solo lo que falta, suministran agua, añaden paja opcionalmente y entrenan y limpian los caballos. El alimento se elige primero por eficacia y después por el precio de mercado actual más bajo. El alimento propio no tiene coste; el alimento comprado y la paja se valoran mediante la economía del juego.
         ]]></es>
     </description>
     <iconFilename>icon_HappyAnimals.png</iconFilename>

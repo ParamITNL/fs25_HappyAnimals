@@ -212,6 +212,89 @@ function HappyAnimals:careForHusbandry(placeable, farmId)
     return costs
 end
 
+local function getFoodChoices(placeable, animalFood)
+    local choicesByFillType = {}
+
+    for _, foodGroup in pairs(animalFood.groups) do
+        local effectiveness = foodGroup.productionWeight or 0
+
+        if foodGroup.fillTypes ~= nil then
+            for _, fillTypeIndex in pairs(foodGroup.fillTypes) do
+                if placeable:getFreeFoodCapacity(fillTypeIndex) > 0 then
+                    local choice = choicesByFillType[fillTypeIndex]
+                    if choice == nil or effectiveness > choice.effectiveness then
+                        choicesByFillType[fillTypeIndex] = {
+                            fillTypeIndex = fillTypeIndex,
+                            effectiveness = effectiveness,
+                            pricePerLiter = g_currentMission.economyManager:getPricePerLiter(fillTypeIndex)
+                        }
+                    end
+                end
+            end
+        end
+    end
+
+    local choices = {}
+    for _, choice in pairs(choicesByFillType) do
+        table.insert(choices, choice)
+    end
+
+    table.sort(choices, function(first, second)
+        if first.effectiveness ~= second.effectiveness then
+            return first.effectiveness > second.effectiveness
+        end
+
+        if first.pricePerLiter ~= second.pricePerLiter then
+            return first.pricePerLiter < second.pricePerLiter
+        end
+
+        return first.fillTypeIndex < second.fillTypeIndex
+    end)
+
+    return choices
+end
+
+local function addStoredFood(placeable, farmId, fillTypeIndex, requested)
+    local storageSystem = g_currentMission.storageSystem
+    if storageSystem == nil or storageSystem.storages == nil then
+        return 0
+    end
+
+    local totalApplied = 0
+    for _, storage in pairs(storageSystem.storages) do
+        if storage:getOwnerFarmId() == farmId and storage:getIsFillTypeSupported(fillTypeIndex) then
+            local stored = storage:getFillLevel(fillTypeIndex)
+            debugLog(
+                "Found farm %d storage with %.1f l of %s",
+                farmId,
+                stored,
+                g_fillTypeManager:getFillTypeNameByIndex(fillTypeIndex)
+            )
+            local amount = math.min(requested - totalApplied, stored)
+
+            if amount > 0 then
+                local applied = math.min(placeable:addFood(farmId, amount, fillTypeIndex, nil, nil, nil) or 0, amount)
+                if applied > 0 then
+                    storage:setFillLevel(stored - applied, fillTypeIndex)
+                    debugLog(
+                        "Withdrew %.1f l of %s from farm storage; %.1f l remains",
+                        applied,
+                        g_fillTypeManager:getFillTypeNameByIndex(fillTypeIndex),
+                        stored - applied
+                    )
+                    totalApplied = totalApplied + applied
+                end
+            end
+        end
+
+        if requested - totalApplied <= 0.001 then
+            break
+        end
+    end
+
+    return totalApplied
+end
+
 function HappyAnimals:fillFood(placeable, farmId)
     if placeable.getAnimalTypeIndex == nil or placeable.getFreeFoodCapacity == nil or placeable.addFood == nil then
         return 0
@@ -222,31 +305,44 @@ function HappyAnimals:fillFood(placeable, farmId)
         return 0
     end
 
-    local freeCapacity = 0
-    local totalEatWeight = 0
-    for _, foodGroup in pairs(animalFood.groups) do
-        local fillTypeIndex = foodGroup.fillTypes ~= nil and foodGroup.fillTypes[1] or nil
-        if fillTypeIndex ~= nil then
-            freeCapacity = math.max(freeCapacity, placeable:getFreeFoodCapacity(fillTypeIndex))
-            totalEatWeight = totalEatWeight + (foodGroup.eatWeight or 0)
-        end
-    end
-
-    if freeCapacity <= 0 or totalEatWeight <= 0 then
+    local choices = getFoodChoices(placeable, animalFood)
+    if #choices == 0 then
         return 0
     end
 
-    local costs = 0
-    for _, foodGroup in pairs(animalFood.groups) do
-        local fillTypeIndex = foodGroup.fillTypes ~= nil and foodGroup.fillTypes[1] or nil
-        local eatWeight = foodGroup.eatWeight or 0
+    local remaining = placeable:getFreeFoodCapacity(choices[1].fillTypeIndex)
+    for _, choice in ipairs(choices) do
+        local applied = addStoredFood(placeable, farmId, choice.fillTypeIndex, remaining)
+        if applied > 0 then
+            remaining = remaining - applied
+            debugLog(
+                "Added %.1f l of stored %s food",
+                applied,
+                g_fillTypeManager:getFillTypeNameByIndex(choice.fillTypeIndex)
+            )
+        end
 
-        if fillTypeIndex ~= nil and eatWeight > 0 then
-            local requested = freeCapacity * eatWeight / totalEatWeight
-            local applied = placeable:addFood(farmId, requested, fillTypeIndex, nil, nil, nil) or 0
-            local pricePerLiter = g_currentMission.economyManager:getPricePerLiter(fillTypeIndex)
-            costs = costs + applied * pricePerLiter
-            debugLog("Added %.1f l of %s food", applied, g_fillTypeManager:getFillTypeNameByIndex(fillTypeIndex))
+        if remaining <= 0.001 then
+            return 0
+        end
+    end
+
+    local costs = 0
+    for _, choice in ipairs(choices) do
+        local applied = placeable:addFood(farmId, remaining, choice.fillTypeIndex, nil, nil, nil) or 0
+        if applied > 0 then
+            remaining = remaining - applied
+            costs = costs + applied * choice.pricePerLiter
+            debugLog(
+                "Purchased %.1f l of %s food at %.4f per liter",
+                applied,
+                g_fillTypeManager:getFillTypeNameByIndex(choice.fillTypeIndex),
+                choice.pricePerLiter
+            )
+        end
+
+        if remaining <= 0.001 then
+            break
         end
     end
 
