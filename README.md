@@ -1,7 +1,7 @@
 # FS25 HappyAnimals
 
 > [!WARNING]
-> This mod is developed for my own use. It is still in a developmental stage and should be considered completely untested for normal gameplay. It may contain errors, affect savegames, or behave differently than expected. Use it at your own risk and keep savegame backups. It is ported from the [FS22 AnimalHelper](https://github.com/ParamITNL/fs22-AnimalHelperMod) using AI.
+> This initial release has not yet been verified through an in-game smoke test. Keep savegame backups. The mod is ported from the [FS22 AnimalHelper](https://github.com/ParamITNL/fs22-AnimalHelperMod) using AI.
 
 HappyAnimals automatically tends to animal husbandries owned by the current farm. It is the Farming Simulator 25 successor to [FS22 AnimalHelper](https://github.com/ParamITNL/fs22-AnimalHelperMod).
 
@@ -22,18 +22,15 @@ Purchased feed and supplied straw are charged to the current farm as animal upke
 
 ## Installation on Windows
 
-1. Open PowerShell or Windows Terminal.
-2. Change to the Farming Simulator 25 mods directory:
-   ```powershell
-   cd "$HOME\Documents\My Games\FarmingSimulator2025\mods"
+1. Download `FS25_HappyAnimals.zip` from the [latest GitHub release](https://github.com/ParamITNL/fs25_HappyAnimals/releases/latest).
+2. Copy the ZIP file as-is into:
+   ```text
+   %USERPROFILE%\Documents\My Games\FarmingSimulator2025\mods
    ```
-3. Clone this repository into the expected mod folder:
-   ```powershell
-   git clone https://github.com/ParamITNL/fs25_HappyAnimals.git FS25_HappyAnimals
-   ```
+3. Do not extract the ZIP file.
 4. Start Farming Simulator 25 and enable HappyAnimals for the savegame.
 
-The repository already has the required FS25 mod folder layout; no build step is required for local use.
+The release archive has the required FS25 mod folder layout at its root.
 
 ## Usage
 
@@ -67,7 +64,7 @@ Multiplayer support is disabled. The mod is intended for personal single-player 
 
 ## Development status
 
-This repository contains development code rather than a tested release. There is no guarantee of savegame compatibility, correct pricing, compatibility with every husbandry, or compatibility with other mods.
+Version `1.0.0.0` is the initial public release. It has not yet been verified in game, so there is no guarantee of correct pricing, compatibility with every husbandry, or compatibility with other mods.
 
 Potential future improvements carried over from the FS22 project include determining straw use from husbandry capabilities automatically and adding more translations. These items are ideas, not commitments or a release schedule.
 
